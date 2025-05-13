@@ -1,0 +1,10 @@
+services: 
+   python:
+     restart: always 
+     build: . 
+     container_name: 'python-env' 
+     working_dir: '/root/' 
+     tty: true 
+     volumes : 
+       - ./code:/root/code
+
