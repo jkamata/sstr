@@ -5,6 +5,14 @@ services:
      container_name: 'python-env' 
      working_dir: '/root/' 
      tty: true 
-     volumes : 
+     depends_on: 
+       - mongodb
+     volumes: 
        - ./code:/root/code
+
+   mongodb: 
+     image: mongo:latest
+     ports: 
+       - "27017:27017"
+
 
